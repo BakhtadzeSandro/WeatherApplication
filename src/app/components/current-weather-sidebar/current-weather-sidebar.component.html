@@ -1,1 +1,30 @@
-<p>current-weather-sidebar works!</p>
+<div class="container">
+  <div class="current-weather-info">
+    <div class="search-and-gps">
+      <div class="search">
+        <button>Search for places</button>
+      </div>
+      <div class="gps">
+        <mat-icon>gps_fixed</mat-icon>
+      </div>
+    </div>
+    <div class="weather-image">
+      <img [src]="currentWeatherInfo?.current?.condition?.icon" />
+    </div>
+    <div class="temperature">
+      <p>{{ currentWeatherInfo?.current?.temp_c }}°C</p>
+    </div>
+    <div class="description">
+      <p>{{ currentWeatherInfo?.current?.condition?.text }}</p>
+    </div>
+    <div class="date-and-city">
+      <div class="date">
+        <p>Today - {{ currentDate | date : "EEEE, d MMM" }}</p>
+      </div>
+      <div class="city">
+        <mat-icon>place</mat-icon>
+        <p>{{ currentWeatherInfo?.location?.name }}</p>
+      </div>
+    </div>
+  </div>
+</div>

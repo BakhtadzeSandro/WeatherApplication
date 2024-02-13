@@ -1,4 +1,4 @@
-export interface Weather {
+export interface WeatherResult {
   location: {
     name: string;
     region: string;

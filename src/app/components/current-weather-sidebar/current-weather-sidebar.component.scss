@@ -1,0 +1,81 @@
+.container {
+  background-color: #1e213a;
+  height: 100vh;
+  .current-weather-info {
+    padding: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85%;
+    .search-and-gps {
+      display: flex;
+      justify-content: space-between;
+      .search {
+        button {
+          width: 100%;
+          background-color: #6e707a;
+          padding: 5%;
+          color: #e7e7eb;
+          border: none;
+          border-radius: 8px;
+          width: 120px;
+          height: 40px;
+          cursor: pointer;
+        }
+      }
+      .gps {
+        mat-icon {
+          padding: 10px;
+          border-radius: 50%;
+          background-color: #6e707a;
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+    .weather-image {
+      margin: 0 auto;
+      img {
+        width: 150px;
+      }
+    }
+    .temperature {
+      margin: 0 auto;
+      p {
+        font-size: 48px;
+        color: white;
+      }
+    }
+    .description {
+      margin: 0 auto;
+      p {
+        font-size: 36px;
+        color: #a09fb1;
+        line-height: 42px;
+      }
+    }
+    .date-and-city {
+      margin: 0 auto;
+      .date {
+        margin: 0 auto;
+        font-size: 18px;
+        color: #88869d;
+      }
+      .city {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30%;
+        display: flex;
+        gap: 10px;
+        mat-icon {
+          color: #88869d;
+        }
+        p {
+          color: #88869d;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

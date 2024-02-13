@@ -1,1 +1,8 @@
-<p>main-page works!</p>
+<div class="container">
+  @if (weatherInformation$ | async; as weatherInformation) {
+  <app-current-weather-sidebar
+    [currentWeatherInfo]="weatherInformation"
+  ></app-current-weather-sidebar>
+  }
+  <app-following-days-and-highlights></app-following-days-and-highlights>
+</div>
