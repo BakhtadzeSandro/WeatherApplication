@@ -1,6 +1,7 @@
 .container {
   display: flex;
-  app-current-weather-sidebar {
+  app-current-weather-sidebar,
+  app-search-sidebar {
     width: 30%;
   }
 }

@@ -1,8 +1,12 @@
 <div class="container">
-  @if (weatherInformation$ | async; as weatherInformation) {
+  @if (weatherInformation$ | async; as weatherInformation) { @if
+  (!searchEnabled) {
   <app-current-weather-sidebar
     [currentWeatherInfo]="weatherInformation"
+    (searchEnabled)="searchCityHandler($event)"
   ></app-current-weather-sidebar>
-  }
+  } @else {
+  <app-search-sidebar></app-search-sidebar>
+  } }
   <app-following-days-and-highlights></app-following-days-and-highlights>
 </div>

@@ -2,7 +2,9 @@
   <div class="current-weather-info">
     <div class="search-and-gps">
       <div class="search">
-        <button>Search for places</button>
+        <button (click)="searchCity(currentWeatherInfo?.location?.name)">
+          Search for places
+        </button>
       </div>
       <div class="gps">
         <mat-icon>gps_fixed</mat-icon>

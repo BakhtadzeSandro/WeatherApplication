@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { WeatherResult } from '../../models/weather.model';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule, DatePipe } from '@angular/common';
@@ -11,6 +11,11 @@ import { CommonModule, DatePipe } from '@angular/common';
 })
 export class CurrentWeatherSidebarComponent {
   @Input() currentWeatherInfo: WeatherResult | undefined;
+  @Output() searchEnabled = new EventEmitter<string>();
 
   currentDate = new Date().toDateString();
+
+  searchCity(cityName: string | undefined) {
+    this.searchEnabled.emit(cityName);
+  }
 }
