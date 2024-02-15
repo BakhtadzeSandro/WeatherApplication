@@ -6,7 +6,10 @@
     (searchEnabled)="searchCityHandler($event)"
   ></app-current-weather-sidebar>
   } @else {
-  <app-search-sidebar></app-search-sidebar>
+  <app-search-sidebar
+    (backToCitySidebar)="backToCitySidebarHandler($event)"
+    (emitCity)="emitCityHandler($event)"
+  ></app-search-sidebar>
   } }
   <app-following-days-and-highlights></app-following-days-and-highlights>
 </div>

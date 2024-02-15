@@ -1,1 +1,31 @@
-<div class="container">test</div>
+<div class="container">
+  <div class="search-sidebar-container">
+    <div class="go-back">
+      <mat-icon matTooltip="Go back" (click)="switchToCitySidebar()"
+        >backspace</mat-icon
+      >
+    </div>
+    <div class="search">
+      <div class="city">
+        <mat-form-field>
+          <mat-label>Enter city name</mat-label>
+          <input matInput placeholder="Ex. Tbilisi" [formControl]="cityName" />
+        </mat-form-field>
+      </div>
+      <div class="search-btn">
+        <button (click)="getCityName()">Search</button>
+      </div>
+    </div>
+    <div class="last-searched-cities">
+      @for (city of lastFiveCities; track $index) {
+      <div
+        class="city-name-container"
+        matTooltip="Get weather information for {{ city }}"
+        (click)="emitCityName(city)"
+      >
+        <p>{{ city }}</p>
+      </div>
+      }
+    </div>
+  </div>
+</div>

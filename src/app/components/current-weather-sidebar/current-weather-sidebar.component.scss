@@ -1,6 +1,7 @@
 .container {
   background-color: #1e213a;
   height: 100vh;
+  animation: fadeIn 1s ease-in;
   .current-weather-info {
     padding: 15%;
     display: flex;
@@ -77,5 +78,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
   }
 }

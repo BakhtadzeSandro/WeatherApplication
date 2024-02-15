@@ -30,8 +30,16 @@ export class MainPageComponent implements OnInit {
   }
 
   searchCityHandler(event: string) {
-    console.log(event);
     this.searchEnabled = true;
+  }
+
+  backToCitySidebarHandler(event: boolean) {
+    this.searchEnabled = false;
+  }
+
+  emitCityHandler(cityName: string) {
+    this.weatherInformation$ =
+      this.weatherService.getWeatherByLocation(cityName);
   }
 
   ngOnInit() {
