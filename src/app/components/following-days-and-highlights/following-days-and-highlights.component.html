@@ -1,9 +1,15 @@
 <div class="container">
-  <div class="date-cards-container">
-    <div class="date-card">
-      @for (day of weatherInfo?.forecast?.forecastday; track $index) {
-      <app-weather-card [dayInfo]="day"></app-weather-card>
-      }
+  <div class="child-container">
+    <div class="date-cards-container">
+      <h2 class="title">Three days forecast</h2>
+      <div class="date-card">
+        @for (day of weatherInfo?.forecast?.forecastday; track $index) {
+        <app-weather-card [dayInfo]="day"></app-weather-card>
+        }
+      </div>
+    </div>
+    <div class="highlights-container">
+      <app-todays-highlights></app-todays-highlights>
     </div>
   </div>
 </div>

@@ -1,10 +1,19 @@
 .container {
   display: flex;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
   app-current-weather-sidebar,
   app-search-sidebar {
     width: 30%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
   app-following-days-and-highlights {
     width: 70%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 }

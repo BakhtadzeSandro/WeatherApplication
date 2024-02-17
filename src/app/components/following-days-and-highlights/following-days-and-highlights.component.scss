@@ -1,14 +1,31 @@
 .container {
   background-color: #100e1d;
-  height: 100vh;
-  .date-cards-container {
-    padding: 10%;
-    .date-card {
-      display: flex;
-      justify-content: space-between;
-      app-weather-card {
-        width: 30%;
+  height: 100%;
+  .child-container {
+    padding: 3%;
+    .date-cards-container {
+      margin: 0 5%;
+      .title {
+        color: #e7e7eb;
       }
+      .date-card {
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: 768px) {
+          flex-direction: column;
+        }
+        app-weather-card {
+          margin-top: 20px;
+          width: 30%;
+          @media (max-width: 768px) {
+            margin-top: 3%;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .highlights-container {
+      margin-top: 5%;
     }
   }
 }

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="card-data">
+    <h3 class="title">{{ extraWeatherInfo?.title }}</h3>
+    <p>{{ extraWeatherInfo?.value }}</p>
+    @if (extraWeatherInfo?.wind_dir) {
+    <p>{{ extraWeatherInfo?.wind_dir }}</p>
+    } @else if (extraWeatherInfo?.hasProgressBar) {
+    <mat-progress-bar
+      color="primary"
+      [value]="extraWeatherInfo?.value"
+    ></mat-progress-bar>
+    }
+  </div>
+</div>

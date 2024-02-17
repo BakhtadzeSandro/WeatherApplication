@@ -1,1 +1,8 @@
-<p>todays-highlights works!</p>
+<div class="container">
+  <h2 class="title">Todays Highlights</h2>
+  @for (highlightItem of highlightsArray; track $index) {
+  <div class="cards">
+    <app-highlight-card [extraWeatherInfo]="highlightItem"></app-highlight-card>
+  </div>
+  }
+</div>

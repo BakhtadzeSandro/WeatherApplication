@@ -16,8 +16,14 @@
     .search {
       margin-top: 20%;
       display: flex;
-      justify-content: space-evenly;
+      flex-direction: column;
+      .city {
+        mat-form-field {
+          width: 100%;
+        }
+      }
       .search-btn {
+        margin: 0 auto;
         button {
           background-color: #3c47e9;
           color: white;

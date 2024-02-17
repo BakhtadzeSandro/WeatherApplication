@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  .card-data {
+    background-color: #1e213a;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    h3 {
+      color: #e7e7eb;
+    }
+    p {
+      margin-top: 10px;
+      color: #e7e7eb;
+    }
+    mat-progress-bar {
+      margin-top: 10px;
+    }
+  }
+}

@@ -23,10 +23,12 @@ export class MainPageComponent implements OnInit {
   private weatherService = inject(WeatherService);
   weatherInformation$: Observable<WeatherResult> | undefined;
   searchEnabled = false;
+  currentCity = 'Tbilisi';
 
   getWeatherInfo() {
-    this.weatherInformation$ =
-      this.weatherService.getWeatherByLocation('Tbilisi');
+    this.weatherInformation$ = this.weatherService.getWeatherByLocation(
+      this.currentCity
+    );
   }
 
   searchCityHandler(event: string) {
@@ -40,9 +42,12 @@ export class MainPageComponent implements OnInit {
   emitCityHandler(cityName: string) {
     this.weatherInformation$ =
       this.weatherService.getWeatherByLocation(cityName);
+    this.currentCity = cityName;
+    localStorage.setItem('currentCity', this.currentCity);
   }
 
   ngOnInit() {
     this.getWeatherInfo();
+    localStorage.setItem('currentCity', JSON.stringify(this.currentCity));
   }
 }
