@@ -1,0 +1,14 @@
+.container {
+  background-color: #100e1d;
+  height: 100vh;
+  .date-cards-container {
+    padding: 10%;
+    .date-card {
+      display: flex;
+      justify-content: space-between;
+      app-weather-card {
+        width: 30%;
+      }
+    }
+  }
+}

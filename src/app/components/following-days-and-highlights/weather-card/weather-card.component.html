@@ -1,1 +1,18 @@
-<p>weather-card works!</p>
+<div class="container">
+  <div class="day-container">
+    <div class="date">
+      <p>{{ dayInfo?.date | date : "EEE, d MMM" }}</p>
+    </div>
+    <div class="day-image">
+      <img [src]="dayInfo?.day?.condition?.icon" />
+    </div>
+    <div class="max-and-min-temps">
+      <div class="max-temp">
+        <p>{{ dayInfo?.day?.maxtemp_c | roundToClosest }}°C</p>
+      </div>
+      <div class="min-temp">
+        <p>{{ dayInfo?.day?.mintemp_c | roundToClosest }}°C</p>
+      </div>
+    </div>
+  </div>
+</div>

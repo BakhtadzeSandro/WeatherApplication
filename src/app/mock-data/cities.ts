@@ -141,4 +141,9 @@ export const capitalCities = [
   'Monaco',
   'San Marino',
   'Vatican City',
+  'Kutaisi',
+  'Batumi',
+  'Rustavi',
+  'Telavi',
+  'Mtskheta',
 ];

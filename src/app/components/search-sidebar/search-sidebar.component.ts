@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './search-sidebar.component.scss',
 })
 export class SearchSidebarComponent {
+  @Input() currentCity: string | undefined;
   @Output() backToCitySidebar = new EventEmitter<boolean>();
   @Output() emitCity = new EventEmitter<string>();
   searchEnabled = true;
@@ -86,8 +87,16 @@ export class SearchSidebarComponent {
   }
 
   emitCityName(name: string) {
-    this.emitCity.emit(name);
-    this.switchToCitySidebar();
+    if (name == this.currentCity) {
+      this.snackBar.open(`Already showing information about ${name}`, 'X', {
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+        duration: 5000,
+      });
+    } else {
+      this.emitCity.emit(name);
+      this.switchToCitySidebar();
+    }
   }
 
   ngOnInit() {

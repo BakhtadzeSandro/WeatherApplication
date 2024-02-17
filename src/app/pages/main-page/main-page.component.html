@@ -9,7 +9,11 @@
   <app-search-sidebar
     (backToCitySidebar)="backToCitySidebarHandler($event)"
     (emitCity)="emitCityHandler($event)"
+    [currentCity]="weatherInformation.location.name"
   ></app-search-sidebar>
-  } }
-  <app-following-days-and-highlights></app-following-days-and-highlights>
+  }
+  <app-following-days-and-highlights
+    [weatherInfo]="weatherInformation"
+  ></app-following-days-and-highlights
+  >}
 </div>
